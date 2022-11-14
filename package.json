@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-course",
+  "version": "1.0.0",
+  "description": "nodejs-full-course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon express.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindyBoss/NodeJS-Course.git"
+  },
+  "author": "Vitaliy Zhyryk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WindyBoss/NodeJS-Course/issues"
+  },
+  "homepage": "https://github.com/WindyBoss/NodeJS-Course#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "yargs": "^17.6.2"
+  }
+}
