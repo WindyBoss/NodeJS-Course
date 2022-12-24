@@ -1,0 +1,32 @@
+{
+  "name": "lesson-2-express-lib",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindyBoss/NodeJS-Course.git"
+  },
+  "author": "Vitaliy Zhyryk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WindyBoss/NodeJS-Course/issues"
+  },
+  "homepage": "https://github.com/WindyBoss/NodeJS-Course#readme",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "heroku": "^7.67.1",
+    "joi": "^17.7.0",
+    "node-fetch": "^3.3.0",
+    "nodemon": "^2.0.20",
+    "npm": "^9.2.0"
+  }
+}
