@@ -36,7 +36,7 @@ import getWeatherData from "./apiService/weatherApi.js";
 /* <=============================Express=initialization==============================================> */
 
 const app = express(); // - initialize server app
-const PORT = process.env.PORT; // - take variable from .env
+const PORT = process.env.PORT || 3000; // - take variable from .env
 const API_KEY = process.env.OPENWEATHERMAP_API_KEY;
 
 // app.use(cors());

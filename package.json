@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/index.js"
+    "dev_index": "nodemon ./src/index.js",
+    "dev_start": "nodemon ./src/serverExample/start.js",
+    "pm2_test": "cd src/serverExample && pm2 start start.js --watch --name userApp -- --port 1520 "
   },
   "repository": {
     "type": "git",
