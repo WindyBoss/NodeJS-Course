@@ -1,5 +1,5 @@
 const Joi = require("joi");
-Joi.objectId = require("joi-objectid")(Joi);
+Joi.objectId = require("joi-objectid")(Joi); // - additional library, which is used for validation ObjectId MongoDB
 const userModel = require("./user.model");
 const { ObjectId } = require("mongodb");
 
@@ -8,7 +8,7 @@ class UserController {
     try {
       const requestBody = JSON.parse(req.body.query);
 
-      const user = await userModel.create(requestBody);
+      const user = await userModel.create(requestBody); // - function for creation an element in Mongodb with validation
 
       return res.status(201).json(user);
     } catch (error) {
@@ -87,7 +87,7 @@ class UserController {
       const userId = req.params.id;
       const requestBody = JSON.parse(req.body.query);
 
-      const updateResults = await userModel.findUserByIdAndUpdate(
+      const updateResults = await userModel.findUserByIdAndUpdate( // - custom function
         userId,
         requestBody
       );
@@ -109,7 +109,7 @@ class UserController {
 
   async deleteUserById(req, res, next) {
     try {
-      const user = await userModel.findByIdAndRemove(req.params.id);
+      const user = await userModel.findByIdAndRemove(req.params.id); // - find by id and remove element
 
       if (!user) {
         return res.status(404).json({
@@ -161,12 +161,12 @@ class UserController {
       const userId = req.params.id;
       const requestBody = JSON.parse(req.body.query);
 
-      const updateUser = await userModel.findOneAndUpdate(
+      const updateUser = await userModel.findOneAndUpdate(  // find by id and update element
         userId,
         {
           $push: { films: requestBody },
         },
-        { new: true }
+        { new: true } // - give instruction to MongoDB to return already updated document
       );
       return res.status(200).json(updateUser);
     } catch (error) {

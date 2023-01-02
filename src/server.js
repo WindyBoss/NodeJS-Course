@@ -1,7 +1,7 @@
 const express = require("express");
 
 /**
- * mongoose -
+ * mongoose - library, which is used to connect to MongoDB
  */
 const mongoose = require("mongoose");
 require("dotenv").config();

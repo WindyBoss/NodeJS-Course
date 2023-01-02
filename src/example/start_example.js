@@ -1,12 +1,12 @@
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb"); // - connection to mongodb server
 const express = require("express");
 const Joi = require("joi");
 
 const PORT = 3000;
 const MONGO_URL =
-  "mongodb+srv://vitititi:Vo4okidik123@mongodb-test.586p9pl.mongodb.net/test_db?retryWrites=true&w=majority";
-const DB_NAME = "test_db";
-const COLLECTION_NAME = "collection_db";
+  "mongodb+srv://vitititi:Vo4okidik123@mongodb-test.586p9pl.mongodb.net/test_db?retryWrites=true&w=majority"; // - url to database
+const DB_NAME = "test_db"; // - name of project
+const COLLECTION_NAME = "collection_db"; // - name of collection
 
 let db, collection;
 
@@ -14,6 +14,9 @@ async function main() {
   const server = express();
   server.use(express.json());
 
+  /**
+   * Connection to database - project - collection
+   */
   const client = new MongoClient(MONGO_URL);
   await client.connect();
   db = client.db(DB_NAME);
@@ -53,7 +56,7 @@ function validateCreateUser(req, res, next) {
 async function createUser(req, res, next) {
   try {
     const requestBody = JSON.parse(req.body.query);
-    await collection.insertOne(requestBody);
+    await collection.insertOne(requestBody); // - function for inserting single item in collection
 
     return res.status(201).json({
       message: "User created successfully",
@@ -66,7 +69,7 @@ async function createUser(req, res, next) {
 
 async function getUsers(req, res, next) {
   try {
-    const users = await collection.find().toArray();
+    const users = await collection.find().toArray(); // - find is used for filtering - if is empty returns whole collection
 
     return res.status(200).json({
       users,
@@ -79,7 +82,7 @@ async function getUsers(req, res, next) {
 function validateUserId(req, res, next) {
   const userId = req.params.id;
 
-  if (!ObjectId.isValid(userId)) {
+  if (!ObjectId.isValid(userId)) { // ObjectId - necessary constructor for manipulation with collection item id 
     return res.status(400).json({
       error: "Invalid user id",
     });
@@ -92,8 +95,8 @@ async function getUserById(req, res, next) {
   try {
     const userId = req.params.id;
 
-    const user = await collection.findOne({
-      _id: new ObjectId(userId),
+    const user = await collection.findOne({ // - is used to find 1 element
+      _id: new ObjectId(userId), // - ObjectId with id
     });
 
     if (!user) {
@@ -112,7 +115,7 @@ async function deleteUserById(req, res, next) {
   try {
     const userId = req.params.id;
 
-    const user = await collection.findOneAndDelete({
+    const user = await collection.findOneAndDelete({ // - is used to find and delete 1 element
       _id: new ObjectId(userId),
     });
 
@@ -154,12 +157,12 @@ async function updateUser(req, res, next) {
     const userId = req.params.id;
     const requestBody = JSON.parse(req.body.query);
 
-    const updateResults = await collection.updateOne(
+    const updateResults = await collection.updateOne( // - update 1 element
       {
         _id: new ObjectId(userId),
       },
       {
-        $set: requestBody,
+        $set: requestBody, // - operator set - is used to update fields
       }
     );
 
