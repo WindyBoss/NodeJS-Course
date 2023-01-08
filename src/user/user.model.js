@@ -19,5 +19,6 @@ function findUserByIdAndUpdate(id, data) {
 }
 
 const userModel = mongoose.model("User", userSchema);
+console.log(userModel);
 
 module.exports = userModel;
