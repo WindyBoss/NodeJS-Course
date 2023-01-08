@@ -16,13 +16,13 @@ Certainly, a complex framework, network databases are more capable of representi
 
 The disadvantage lies in the inability to alter the structure due to its complexity and also in it being highly structurally dependent. 
 
-1. Object-oriented databases
+3. Object-oriented databases
 Those familiar with the Object-Oriented Programming Paradigm would be able to relate to this model of databases easily. Information stored in a database is capable of being represented as an object which response as an instance of the database model. Therefore, the object can be referenced and called without any difficulty. As a result, the workload on the database is substantially reduced. 
 In the chart above, we have different objects linked to one another using methods; one can get the address of the Person (represented by the Person Object) using the livesAt() method. Furthermore, these objects have attributes which are in fact the data elements that need to be defined in the database. 
 
 An example of such a model is the Berkeley DB software library which uses the same conceptual background to deliver quick and highly efficient responses to database queries from the embedded database. 
 
-1. Relational databases
+4. Relational databases
 Considered the most mature of all databases, these databases lead in the production line along with their management systems. In this database, every piece of information has a relationship with every other piece of information. This is on account of every data value in the database having a unique identity in the form of a record. 
 
 Note that all data is tabulated in this model. Therefore, every row of data in the database is linked with another row using a primary key. Similarly, every table is linked with another table using a foreign key. 
@@ -30,6 +30,10 @@ Note that all data is tabulated in this model. Therefore, every row of data in t
 Due to this introduction of tables to organize data, it has become exceedingly popular. In consequence, they are widely integrated into Web-Ap interfaces to serve as ideal repositories for user data. What makes it further interesting is the ease in mastering it, since the language used to interact with the database is simple (SQL in this case) and easy to comprehend. 
 
 It is also worth being aware of the fact that in Relational databases, scaling and traversing through data is quite a light-weighted task in comparison to Hierarchical Databases. 
+
+- use sequelize lib for connection to SQL-type databases
+- https://www.w3schools.com/sql/
+
 
 5. NoSQL databases.
 A NoSQL originally referring to non SQL or non-relational is a database that provides a mechanism for storage and retrieval of data. This data is modeled in means other than the tabular relations used in relational databases. 
@@ -55,3 +59,15 @@ NoSQL has the following disadvantages:
 ## MongoDB 
 - Mongoose
 - MongoDB Compass 
+
+
+
+
+## main libs: 
+1. dotenv - library for using file .env, which help to hide secret information during publishing in public code portals like github
+2. express - library for creation of servers 
+3. joi - library for data validation
+4. joi-objectid - segment of joi library for data validation of mongoDB object id
+5. mongodb - library for working with mongoDB (made by mongodb)
+6. mongoose - library for working with mongoDB (more abstract and easier to use than mongoDB)
+7. nodemon - library for automatization server development process (automatically reload server after every change) 
