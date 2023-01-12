@@ -4,6 +4,9 @@ import express from "express";
 import { promises as fsPromises } from "fs";
 
 import imagemin from "imagemin";
+/**
+ * The next imports are plugins for parsing jpeg & png picture format
+ */
 import imageminJpegtran from "imagemin-jpegtran";
 import imageminPngquant from "imagemin-pngquant";
 
@@ -77,3 +80,13 @@ async function minifyImage(req, res, next) {
     next(error);
   }
 }
+
+/**
+ * Generally code will do the next steps:
+ 1. serve text fields and file post fetch
+ 2. save picture in 'draft' folder by using multer
+ 3. get image from 'draft' folder
+ 4. use plugin to decrease size of picture 
+ 5. save picture in 'static' folder
+ 6. delete from 'draft'
+ */
