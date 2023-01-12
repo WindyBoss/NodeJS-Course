@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-course",
+  "version": "1.0.0",
+  "description": "*Code testing* - automatic testing of written code by adding additional code in separate files (files must have .test.js or .spec.js)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha my-first-unit-test.spec.js",
+    "test:acceptance": "mocha acceptance.spec.js",
+    "exit": "mocha acceptance.spec.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindyBoss/NodeJS-Course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WindyBoss/NodeJS-Course/issues"
+  },
+  "homepage": "https://github.com/WindyBoss/NodeJS-Course#readme",
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1",
+    "supertest": "^6.3.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "joi-objectid": "^4.0.2",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.3",
+    "nodemon": "^2.0.20",
+    "should": "^13.2.3"
+  }
+}
