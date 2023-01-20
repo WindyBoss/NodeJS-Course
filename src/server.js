@@ -9,6 +9,7 @@ const { PORT, MONGO_URL, DB_NAME, COLLECTION_NAME } = process.env;
 
 const userRouter = require("./user/user.router");
 const filmRouter = require("./films/films.router");
+const authRouter = require("./auth/auth.router");
 
 module.exports = class UserServer {
   constructor() {
@@ -35,6 +36,7 @@ module.exports = class UserServer {
   initRoutes() {
     this.server.use("/users", userRouter);
     this.server.use("/films", filmRouter);
+    this.server.use("/auth", authRouter);
   }
 
   async initDatabase() {
