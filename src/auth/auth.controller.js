@@ -51,6 +51,10 @@ class AuthController {
 
       await userModel.createVerificationToken(user._id, verificationToken);
 
+      /**
+       * For verification is necessary to send a verification link to user.
+       * Also to create a router endpoint, which serve mail verification
+       */
       const msg = {
         to: user.email,
         from: process.env.Send_Mail,

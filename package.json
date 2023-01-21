@@ -4,9 +4,6 @@
   "description": "*Code testing* - automatic testing of written code by adding additional code in separate files (files must have .test.js or .spec.js)",
   "main": "start.js",
   "scripts": {
-    "test": "mocha my-first-unit-test.spec.js",
-    "test:acceptance": "mocha acceptance.spec.js",
-    "exit": "mocha acceptance.spec.js --exit",
     "dev": "nodemon src/start.js"
   },
   "repository": {
@@ -19,11 +16,6 @@
     "url": "https://github.com/WindyBoss/NodeJS-Course/issues"
   },
   "homepage": "https://github.com/WindyBoss/NodeJS-Course#readme",
-  "devDependencies": {
-    "mocha": "^10.2.0",
-    "sinon": "^15.0.1",
-    "supertest": "^6.3.3"
-  },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "bcryptjs": "^2.4.3",
@@ -37,6 +29,7 @@
     "mongoose": "^6.8.3",
     "nodemon": "^2.0.20",
     "should": "^13.2.3",
+    "socket.io": "^4.5.4",
     "uuid": "^9.0.0"
   }
 }
